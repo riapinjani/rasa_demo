@@ -1,0 +1,200 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+- intent: help
+  examples: |
+    - i need help
+    - what do you do
+    - how can you help me
+    - what services do you provide
+    - whats your function
+    - what can you help me with
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ok
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - very good
+    - great
+    - amazing
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I'm good
+- intent: mood_unhappy
+  examples: |
+    - sad
+    - very sad
+    - unhappy
+    - bad
+    - very bad
+    - awful
+    - terrible
+    - not very good
+    - extremely sad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: faq/card_replacement_days
+  examples: |
+    - I lost my card, when can i get a replacement
+    - i need a replacement, how many days
+    - how much time does it take to get a new card
+    - i ordered a new card, when should i get it
+    - my card has been stolen, when will i get the new one
+    - how long does it take to get a card replaced
+    - replacement time please
+- intent: faq/card_activation_days
+  examples: |
+    - How long will it take to activate my new card
+    - i submitted my details, is my card ready to use now?
+    - When can I start using my card
+    - When will my card be active?
+    - How long for card activation?
+    - What is the time period for card activation?
+- intent: faq/daily_transaction_limit
+  examples: |
+    - What is the daily transaction limit
+    - How much money can i transfer today
+    - How much can i transfer in one day
+    - Is there a limit to how much i can transfer
+    - Can i transfer 1 million AED right now
+    - I want to know the daily transfer amount cap
+- intent: faq/transfer_charges
+  examples: |
+    - Are there any charges for fund transfer
+    - What is the fee for a fund transfer
+    - extra charges for my transaction
+    - Is there a fee for transferiing money
+    - How much is the charge for a transfer
+- intent: inform
+  examples: |
+    - i want to transfer [$](currency) [10](amount_of_money)
+    - [5000](amount_of_money)
+    - [500](amount_of_money) [AED](currency)
+    - [1900](amount_of_money) [Euros](currency)
+    - [1599](amount_of_money) [aed](currency)
+    - [5](amount_of_money) [dollars](currency)
+    - [12099](amount_of_money)
+    - [$](currency)
+    - $[100](amount_of_money)
+    - $[500](amount_of_money)
+    - [100](amount_of_money) [dollars](currency)
+    - [1000](amount_of_money) [dollars](currency)
+    - a hundred dollars
+    - A [friend](person)
+    - [Alexandra](person)?
+    - i want to give it to [Jennifer](person)
+    - [Alex](person)
+    - give money to [jimmy](person)
+    - [4000002485703167](card_number)
+    - [4000002485703234](card_number)
+    - my card number is [4000008057413887](card_number)
+    - hey it is [4000007120453680](card_number)
+    - [4000001876340522](card_number)
+- intent: transfer_money
+  examples: |
+    - I want to transfer [$](currency)[100](amount_of_money) to [Bob](person)
+    - can i transfer money to [Sally](person)
+    - I want to transfer money
+    - I want to pay someone
+    - can I pay someone
+    - I need to transfer money to a friend
+    - can I transfer money to my mom
+    - I want to pay [Bill](person)
+    - pay my friend
+    - transfer money
+    - I want to transfer [$](currency)[100](amount_of_money) to [John](person)
+    - i want to transfer $400 to [Akela](person)
+    - Pay Karen 60 [Euros](currency)
+    - pay Lisa $60
+    - transfer $60 to [Sally](person)
+    - need to transfer money
+    - II want to transfer to Kelly
+    - Pay Percy $50
+    - Pay $50 to Percy
+    - pay Emma
+    - i want to transfer $[100](amount_of_money)
+    - i want to transfer 100 [AED](currency) to my daughter
+    - i want to transfer money please
+    - i mean i want to transfer money
+    - I need to pay a friend.
+    - transfer my money
+- intent: check_balance
+  examples: |
+    - i want to check my balance
+    - whats my balance
+    - how much money do i have
+    - what kind of money do i have left
+    - could you tell me my balance
+    - do i have any money in my account left
+    - balance
+    - tell me my balance
+    - I want to make a request for checking my balance please
+    - i need to know my balance please
+    - can you check balance for  [4000007120499680](card_number)
+    - tell me how much money i have, card number is [4000007121239680](card_number)
+    - check my balance
+    - check balance for [4000002485703167](card_number)
+    - check my balance for [4000001876340521](card_number)
+    - can you check the balance for [4000001876340123](card_number)
+- intent: chitchat/ask_name
+  examples: |
+    - What is your name?
+    - May I know your name?
+    - What do people call you?
+    - Do you have a name for yourself?
+- intent: chitchat/ask_weather
+  examples: |
+    - What's the weather like today?
+    - Does it look sunny outside today?
+    - Oh, do you mind checking the weather for me please?
+    - I like sunny days in Dubai.
+- intent: hello_world
+  examples: |
+    - hello world
+    - world hello
+    - hello world hello world
+- intent: out_of_scope
+  examples: |
+    - Whats up with Paris hilton these days
+    - why is kim so weird
+    - i want some celeb gossip
+    - give me all the updates about celebrities
+    - I want to hook up with justin bieber
+    - I love miley so much
+    - I want to be like an actress
+    - Kendall is such a star don't you think so
+    - I love celebrities
+    - i want to be popular

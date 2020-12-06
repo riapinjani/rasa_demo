@@ -1,0 +1,118 @@
+version: "2.0"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- greet
+- check_balance
+- faq:
+    is_retrieval_intent: true
+- chitchat:
+    is_retrieval_intent: true
+- affirm
+- transfer_money:
+    ignore_entities:
+    - card_number
+- goodbye
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- inform
+- help
+- hello_world
+- out_of_scope
+
+entities:
+- amount_of_money
+- card_number
+- currency
+- person
+
+slots:
+  amount_of_money:
+    type: float
+    influence_conversation: false
+    max_value: 10000000.0
+    min_value: 0.0
+  card_number:
+    type: text
+    influence_conversation: false
+  currency:
+    type: text
+    influence_conversation: false
+  person:
+    type: text
+    influence_conversation: false
+  requested_slot:
+    type: text
+    influence_conversation: false
+    
+responses:
+  utter_greet:
+  - text: Hey, how are you today?
+  utter_help:
+  - text: "I can help you with your financial accounts. \nYou can ask me things like: \n- Check balance \n- Make a transaction \n- FAQs \n- chitchat"
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_faq/card_replacement_days:
+  - text: You should recieve your new card within two to three working days from the order date.
+  utter_faq/card_activation_days:
+  - text: Your card will be ready to use within 24 hours!
+  utter_faq/daily_transaction_limit:
+  - text: The daily transaction limit is 50,000 AED
+  utter_faq/transfer_charges:
+  - text: There are no charges associated to fund transfers.
+  utter_ask_transfer_form_amount_of_money:
+  - text: Could you please specify the amount of money you wish to transfer.
+  utter_ask_transfer_form_person:
+  - text: Could you please specify who you want to transfer the money to.
+  utter_ask_transfer_form_currency:
+  - text: Could you please specify the currency.
+  utter_chitchat/ask_name:
+  - text: Hello, my name is Retrieval Bot.
+  utter_chitchat/ask_weather:
+  - text: It's always bright and sunny in Dubai!
+  utter_transfer_completed:
+  - text: An amount of {currency}{amount_of_money} has been transferred to {person}.
+  utter_ask_continue:
+  - text: Do you want to continue?
+  utter_submit_balance_form:
+  - text: Your balance is None.
+
+actions:
+- action_hello_world
+- validate_balance_form
+- action_ask_card_number
+- action_balance_form
+- utter_ask_transfer_form_person
+- utter_chitchat
+- utter_faq
+- utter_goodbye
+- utter_greet
+- utter_help
+- utter_transfer_completed
+
+forms:
+  transfer_form:
+    amount_of_money:
+    - entity: amount_of_money
+      type: from_entity
+    currency:
+    - entity: currency
+      type: from_entity
+    person:
+    - entity: person
+      type: from_entity
+  balance_form:
